@@ -1,8 +1,24 @@
+# netlify.toml
+#
+# WHY THIS FILE CHANGED:
+#
+# The original publish path was ".output/public" — the Cloudflare Workers
+# build output. Netlify cannot create that directory because it cannot run
+# the Cloudflare vite plugin's SSR/Workers build step.
+#
+# The fixed vite.config.ts now builds a plain SPA to "dist/" (the Vite default).
+# This file is updated to match.
+#
+# The [[redirects]] rule is the standard Netlify SPA fix:
+#   Any URL that doesn't match a real file → serve index.html with status 200.
+#   Without this, refreshing any non-root URL returns Netlify's own 404 page
+#   instead of letting TanStack Router handle the route client-side.
+
 [build]
-  command = "npm run build"
-  publish = "dist/client"
+  command   = "npm run build"
+  publish   = "dist"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from   = "/*"
+  to     = "/index.html"
   status = 200
