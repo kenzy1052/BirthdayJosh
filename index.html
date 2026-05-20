@@ -1,0 +1,34 @@
+<!doctype html>
+<!--
+  index.html — Vite SPA shell
+  
+  WHY THIS FILE WAS ADDED:
+    TanStack Start (SSR) generates the <html> shell server-side via the
+    `shellComponent` in __root.tsx. A plain Vite SPA build requires a static
+    index.html that Vite uses as its entry point.
+
+    Vite injects the built JS and CSS bundles into this file automatically
+    during `vite build`. At runtime, TanStack Router takes over and renders
+    the matched route into <div id="root">.
+
+    The Google Fonts <link> tags are NOT included here because __root.tsx's
+    `head.links` already declares them — TanStack Router injects them into
+    the document <head> at runtime via its head management API.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DO NOT PRESS — A Birthday Experience for Joshua</title>
+    <meta
+      name="description"
+      content="A classified interactive birthday tribute to Joshua. Do not press the button."
+    />
+    <link rel="icon" type="image/png" href="/logo.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Vite injects the bundled JS entry here at build time -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
